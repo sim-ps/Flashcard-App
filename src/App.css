@@ -29,8 +29,6 @@
   body {
     font-family: var(--font-sans);
   }
-  /* Keep global element styles limited to true defaults.
-     Reusable control layout lives on the control classes below. */
   input[type="checkbox"] {
     @apply w-5 h-5 appearance-none rounded-sm border-2  bg-white checked:bg-yellow-500 
     focus-visible:outline-3 outline-blue-600 outline-offset-3 transition-shadow duration-100;
@@ -51,7 +49,7 @@
 
       box-shadow: 2px 2px var(--color-blue-400);
     }
-    &:invalid {
+    &[aria-invalid="true"] {
       @apply border-pink-700 outline-pink-700;
 
       box-shadow: 2px 2px var(--color-pink-700);

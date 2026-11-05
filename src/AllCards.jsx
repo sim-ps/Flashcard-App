@@ -1,5 +1,6 @@
 import "./App.css";
 import plusCircleIcon from "./assets/images/icon-circle-plus.svg";
+import errorIcon from "./assets/images/icon-error.svg";
 
 import Layout from "./components/Layout";
 import Header from "./components/Header";
@@ -15,6 +16,7 @@ import { useFlashcards } from "./hooks/useFlashcards";
 function AllCards() {
   const [flashcards, setFlashcards] = useFlashcards();
 
+  const [formErrors, setFormErrors] = useState("");
   const [hideMastered, setHideMastered] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
@@ -26,11 +28,25 @@ function AllCards() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+    const question = String(formData.get("question") ?? "").trim();
+    const answer = String(formData.get("answer") ?? "").trim();
+    const category = String(formData.get("category") ?? "").trim();
+
+    const errors = {
+      question: question ? "" : "Please enter a question.",
+      answer: answer ? "" : "Please enter an answer.",
+      category: category ? "" : "Please enter a category.",
+    };
+
+    setFormErrors(errors);
+
+    if (Object.values(errors).some(Boolean)) return;
+
     const newCard = {
       id: crypto.randomUUID(),
-      question: formData.get("question").trim(),
-      answer: formData.get("answer").trim(),
-      category: formData.get("category").trim(),
+      question,
+      answer,
+      category,
       knownCount: 0,
     };
 
@@ -130,29 +146,59 @@ function AllCards() {
           <label htmlFor="question">
             Question
             <input
+              aria-invalid={Boolean(formErrors.question)}
               type="text"
               id="question"
               name="question"
               placeholder="e.g., What is the capital of France?"
             />
+            {formErrors.question && (
+              <span
+                role="alert"
+                className="flex items-center text-pink-700 gap-1"
+              >
+                <img className="inline" src={errorIcon} alt="error" />{" "}
+                {formErrors.question}
+              </span>
+            )}
           </label>
           <label htmlFor="answer">
             Answer
             <textarea
+              aria-invalid={Boolean(formErrors.answer)}
               name="answer"
               id="answer"
               rows="5"
               placeholder="e.g., Paris"
             ></textarea>
+            {formErrors.answer && (
+              <span
+                role="alert"
+                className="flex items-center text-pink-700 gap-1"
+              >
+                <img className="inline" src={errorIcon} alt="error" />{" "}
+                {formErrors.answer}
+              </span>
+            )}
           </label>
           <label htmlFor="category">
             Category
             <input
+              aria-invalid={Boolean(formErrors.category)}
               type="text"
               id="category"
               name="category"
               placeholder="e.g., Geography"
             />
+            {formErrors.category && (
+              <span
+                role="alert"
+                className="flex items-center text-pink-700 gap-1"
+              >
+                <img className="inline" src={errorIcon} alt="error" />{" "}
+                {formErrors.category}
+              </span>
+            )}
           </label>
           <button
             className="button-primary self-start font-semibold"
