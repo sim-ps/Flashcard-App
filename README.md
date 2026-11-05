@@ -33,13 +33,16 @@ Users should be able to:
 
 ### Screenshot
 
-A screenshot of the completed UI will be added here soon.
+[All Cards Page Desktop View](./public/AllCards-Desktop.png)
+[All Cards Page Mobile View](./public/AllCards-Mobile.png)
+[Study Mode Page Desktop View](./public/StudyMode-Desktop.png)
+[Study Mode Page Mobile View](./public/StudyMode-Mobile.png)
 
 ### Links
 
 - Challenge: [Frontend Mentor - Flashcard App](https://www.frontendmentor.io/challenges/flashcard-app)
-- Solution URL: [GitHub repository link](https://github.com/sim-ps/Flashcard-App)
-- Live Site URL: Not deployed yet
+- Solution URL: [https://github.com/sim-ps/Flashcard-App](https://github.com/sim-ps/Flashcard-App)
+- Live Site URL: [https://flashcard-app-blond-chi.vercel.app/all-cards](https://flashcard-app-blond-chi.vercel.app/all-cards)
 
 ## My process
 
