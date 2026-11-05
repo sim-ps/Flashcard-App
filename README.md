@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Screenshot
 
-- [./public/AllCards-Desktop.png](./public/AllCards-Desktop.png)
-- [./public/AllCards-Mobile.png](./public/AllCards-Mobile.png)
+![./public/AllCards-Desktop.png](./public/AllCards-Desktop.png)
+![./public/AllCards-Mobile.png](./public/AllCards-Mobile.png)
 - [Study Mode Page Desktop View](./public/StudyMode-Desktop.png)
 - [Study Mode Page Mobile View](./public/StudyMode-Mobile.png)
 
