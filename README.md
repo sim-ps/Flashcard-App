@@ -43,7 +43,7 @@ Users should be able to:
 
 - Challenge: [Frontend Mentor - Flashcard App](https://www.frontendmentor.io/challenges/flashcard-app)
 - Solution URL: [https://github.com/sim-ps/Flashcard-App](https://github.com/sim-ps/Flashcard-App)
-- Live Site URL: [https://flashcard-app-blond-chi.vercel.app/all-cards](https://flashcard-app-blond-chi.vercel.app/all-cards)
+- Live Site URL: [https://flashcard-app-blond-chi.vercel.app](https://flashcard-app-blond-chi.vercel.app)
 
 ## My process
 
