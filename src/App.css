@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /* Neutral */
+  --color-neutral-900: hsl(24, 96%, 9%);
+  --color-neutral-600: hsl(25, 17%, 36%);
+  --color-neutral-100: hsl(24, 40%, 95%);
+  --color-neutral-0: hsl(0, 0%, 100%);
+  /* Accent */
+  --color-yellow-500: hsl(43, 93%, 63%);
+  --color-blue-400: hsl(221, 68%, 75%);
+  --color-blue-600: hsl(222, 52%, 55%);
+  --color-teal-400: hsl(173, 66%, 57%);
+  --color-pink-400: hsl(314, 94%, 76%);
+  --color-pink-500: hsl(337, 80%, 70%);
+  --color-pink-700: hsl(336, 79%, 49%);
+  /* Typography */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-neutral-900);
+    color: var(--color-neutral-900);
+  }
+  html,
+  body {
+    font-family: var(--font-sans);
+  }
+  /* Keep global element styles limited to true defaults.
+     Reusable control layout lives on the control classes below. */
+  input[type="checkbox"] {
+    @apply w-5 h-5 appearance-none rounded-sm border-2  bg-white checked:bg-yellow-500 
+    focus-visible:outline-3 outline-blue-600 outline-offset-3 transition-shadow duration-100;
+    &:hover {
+      box-shadow: 2px 2px var(--color-neutral-900);
+    }
+  }
+  input[type="text"],
+  textarea {
+    @apply p-4 border border-neutral-600 rounded-md outline outline-neutral-600 resize-none;
+
+    &:hover {
+      box-shadow: 2px 2px var(--color-neutral-600);
+    }
+
+    &:focus {
+      @apply border-blue-400 outline-blue-400;
+
+      box-shadow: 2px 2px var(--color-blue-400);
+    }
+    &:invalid {
+      @apply border-pink-700 outline-pink-700;
+
+      box-shadow: 2px 2px var(--color-pink-700);
+    }
+  }
+  label {
+    @apply text-start font-medium flex flex-col gap-2;
+  }
+  progress {
+    @apply border-2  rounded-full overflow-hidden;
+
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--color-white);
+
+    &::-webkit-progress-bar {
+      background: var(--color-white);
+      border-radius: 0;
+    }
+
+    &::-webkit-progress-value {
+      background: var(--color-neutral-900);
+      border-radius: 0 9999px 9999px 0;
+    }
+
+    &::-moz-progress-bar {
+      background: var(--color-neutral-900);
+      border-radius: 0 9999px 9999px 0;
+    }
+  }
+}
+
+@layer utilities {
+  /* Typography */
+  .text-preset-1,
+  .text-preset-1-tablet,
+  .text-preset-1-mobile,
+  .text-preset-4,
+  .text-preset-3,
+  .text-preset-4-semibold {
+    line-height: 120%;
+  }
+  .text-preset-4-regular,
+  .text-preset-5-regular,
+  .text-preset-5 {
+    line-height: 140%;
+  }
+  .text-preset-1,
+  .text-preset-1-tablet,
+  .text-preset-1-mobile {
+    font-weight: 700;
+  }
+  .text-preset-2,
+  .text-preset-3,
+  .text-preset-4-semibold {
+    font-weight: 600;
+  }
+  .text-preset-4-medium,
+  .text-preset-5,
+  .text-preset-6 {
+    font-weight: 500;
+  }
+  .text-preset-4-regular,
+  .text-preset-5-regular {
+    font-weight: 400;
+  }
+  .text-preset-1 {
+    font-size: 40px;
+  }
+  .text-preset-1-tablet {
+    font-size: 32px;
+  }
+  .text-preset-1-mobile,
+  .text-preset-2 {
+    font-size: 24px;
+  }
+  .text-preset-3 {
+    font-size: 20px;
+  }
+  .text-preset-4-semibold,
+  .text-preset-4-medium,
+  .text-preset-4-regular {
+    font-size: 16px;
+  }
+  .text-preset-5,
+  .text-preset-5-regular {
+    font-size: 14px;
+  }
+  .text-preset-6 {
+    letter-spacing: -3%;
+    line-height: 130%;
+    font-size: 12px;
+  }
+  .shadow-solid-2 {
+    box-shadow: 1px 2px var(--color-neutral-900);
+  }
+  .label-checbox {
+    display: none;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border-2 bg-white;
+    box-shadow: 1px 2px var(--color-neutral-900);
+  }
+  .tab {
+    @apply flex flex-row w-fit p-1 gap-1 border-2 rounded-full;
+    box-shadow: 1px 2px var(--color-neutral-900);
+  }
+  .tab-button-selected {
+    @apply bg-yellow-500 font-semibold;
+  }
+  .tab-button {
+    @apply border-transparent font-semibold;
+  }
+  .button-primary,
+  .button-secondary,
+  .button-accent,
+  .tab-button {
+    @apply font-medium whitespace-nowrap px-4 py-3 gap-2 flex flex-row justify-center items-center rounded-full border-2 transition-shadow duration-100;
+  }
+
+  .button-primary,
+  .button-secondary {
+    box-shadow: 2px 2px var(--color-neutral-900);
+  }
+  .button-primary {
+    @apply bg-yellow-500;
+    &:hover {
+      box-shadow: 4px 4px var(--color-neutral-900);
+    }
+    &:focus {
+      box-shadow: 3px 3px var(--color-blue-600);
+    }
+    &:disabled {
+      opacity: 50%;
+    }
+  }
+  .button-secondary {
+    @apply bg-white;
+    &:hover {
+      box-shadow: 4px 4px var(--color-neutral-900);
+    }
+    &:focus {
+      box-shadow: 3px 3px var(--color-blue-600);
+    }
+  }
+  .button-accent {
+    @apply focus:outline-3 outline-blue-600 outline-offset-3 hover:bg-neutral-100;
+  }
+}
+
+/* .dark {
+  } */
