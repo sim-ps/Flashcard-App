@@ -1,16 +1,80 @@
-# React + Vite
+# Frontend Mentor - Flashcard App solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Flashcard App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/flashcard-app). It lets users create and organize flashcards, study with category filters, track mastery, and save progress in the browser.
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### The challenge
 
-## Expanding the ESLint configuration
+Users should be able to:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Create, edit, and delete flashcards
+- Browse cards and organize them by category
+- Filter cards by one or more categories
+- Hide mastered cards and shuffle the cards
+- Study one card at a time and reveal its answer
+- Mark cards as known, reset their progress, and navigate between cards
+- View study statistics that reflect their progress
+- Keep their flashcards and progress after refreshing the page
+
+### Screenshot
+
+A screenshot of the completed UI will be added here soon.
+
+### Links
+
+- Challenge: [Frontend Mentor - Flashcard App](https://www.frontendmentor.io/challenges/flashcard-app)
+- Solution URL: [GitHub repository link](https://github.com/sim-ps/Flashcard-App)
+- Live Site URL: Not deployed yet
+
+## My process
+
+### Built with
+
+- React and reusable components
+- Vite for local development and production builds
+- React Router for navigation
+- Tailwind CSS for responsive styling
+- Motion for UI transitions
+- localStorage for saving flashcards and progress
+- ESLint for code quality checks
+
+### What I learned
+
+Building this app helped me understand how to share flashcard data and actions across different parts of a React app. I also learned to use the filtered cards as the source for study navigation, so the Next button behaves correctly when a category filter is active.
+
+I used localStorage to keep the flashcards and study progress after a page refresh in the same browser.
+
+### Continued development
+
+I’d like to connect the app to a backend and database so users can access their flashcards and progress across devices.
+
+### Useful resources
+
+- [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/flashcard-app) - The original design and requirements
+- [React documentation](https://react.dev/) - Helpful for learning React state and components
+- [React Router documentation](https://reactrouter.com/) - Useful for setting up navigation
+- [Tailwind CSS documentation](https://tailwindcss.com/) - Useful for building responsive layouts
+
+## Author
+
+- GitHub - [@sim-ps](https://github.com/sim-ps)
+- Frontend Mentor - [@sim-ps](https://www.frontendmentor.io/profile/sim-ps)
+
+## Acknowledgments
+
+Thanks to Frontend Mentor for the challenge design and requirements, and to the React, Vite, and Tailwind communities for their documentation and tools.
